@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+<div>
+  <div *ngIf="isLoggedIn">welcome, {{ userName }}</div>
+  <p [ngClass]="okay" *ngIf="!isLoggedIn">Please login to view the content</p>
+
+  <ul>
+    <li *ngFor="let name of names; let i = index">{{ i }}{{ name }}</li>
+  </ul>
+
+  <div [ngSwitch]="grade">
+    <p *ngSwitchCase="'A'">Excellent</p>
+    <p *ngSwitchCase="'B'">Very good</p>
+    <p *ngSwitchDefault>N/A</p>
+  </div>
+</div>
